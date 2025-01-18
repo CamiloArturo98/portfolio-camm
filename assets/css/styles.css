@@ -1,0 +1,256 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header {
+    background-color: #1c1c1c;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+header nav {
+    display: flex;
+    justify-content: center;  /* Modificación para centrar la barra */
+    align-items: center;
+    position: relative; /* Para permitir posicionamiento absoluto del botón de hamburguesa */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    transition: max-height 0.3s ease-in-out;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #FFEA00;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: #ffffff;
+    cursor: pointer;
+    user-select: none;
+    position: absolute;  /* Esto coloca el botón fuera del flujo normal del layout */
+    left: 20px;  /* Asegura que el botón esté al lado izquierdo */
+}
+
+.menu-toggle.active + ul {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #1c1c1c;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        border-top: 1px solid #555;
+        overflow: hidden;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li a {
+        font-size: 1.2rem;
+        padding: 10px;
+        width: 100%;
+        display: block;
+    }
+}
+
+/* Home Section */
+#Home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#Home h1 {
+    font-size: 4rem;
+    margin: 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+#Home p {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+#Home img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
+    border: 4px solid #FFEA00;
+    object-fit: cover;
+}
+
+/* About Section */
+#About-me {
+    padding: 100px 20px;
+    background-color: #1c1c1c;
+    text-align: center;
+}
+
+#About-me h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #FFEA00;
+}
+
+#About-me p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: #d3d3d3;
+}
+
+/* Projects Section */
+#Projects {
+    padding: 100px 20px;
+    background-color: #121212;
+    text-align: center;
+}
+
+#Projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #FFEA00;
+}
+
+#Projects div {
+    display: inline-block;
+    width: 300px;
+    margin: 20px;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+#Projects div:hover {
+    transform: translateY(-10px);
+}
+
+#Projects div img {
+    width: 100%;
+    height: auto;
+}
+
+#Projects div h3 {
+    margin: 15px 0;
+    color: #FFEA00;
+}
+
+#Projects div p {
+    padding: 0 15px 15px;
+    color: #d3d3d3;
+}
+
+/* Contact Section */
+#Contact {
+    padding: 100px 20px;
+    background-color: #1c1c1c;
+    text-align: center;
+}
+
+#Contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #FFEA00;
+}
+
+#Contact form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#Contact form label {
+    display: block;
+    margin: 15px 0 5px;
+    text-align: left;
+}
+
+#Contact form input,
+#Contact form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #121212;
+    color: #fff;
+    font-size: 1rem;
+}
+
+#Contact form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #FFEA00;
+    color: #1c1c1c;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#Contact form button:hover {
+    background-color: #FFEA00;
+}
+
+/* Footer */
+footer {
+    background-color: #1c1c1c;
+    padding: 20px;
+    text-align: center;
+    color: #d3d3d3;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
