@@ -1,10 +1,10 @@
-let navBar = document.querySelector('#nav'); // Manejando todos los elementos dentro de nav
-navBar.addEventListener('mouseover', () => { // Evento para hacer zoom en la barra de navegación al colocar el mouse en la barra
+let navBar = document.querySelector('#nav');
+navBar.addEventListener('mouseover', () => {
     navBar.style.transform = 'scale(1.1)';
     navBar.style.transition = 'transform 0.3s ease';
 });
 
-navBar.addEventListener('mouseout', () => { // Evento para que el zoom vuelva al estado normal al quitar el mouse
+navBar.addEventListener('mouseout', () => {
     navBar.style.transform = 'scale(1)';
 });
 
@@ -51,39 +51,36 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Función dinámica del formulario
+
 let form = document.querySelector('#form');
 
 form.addEventListener('submit', (event) => {
-    event.preventDefault(); // Evita el comportamiento por defecto
+    event.preventDefault();
 
     let name = document.querySelector('#name').value;
     let email = document.querySelector('#email').value;
     let message = document.querySelector('#msm').value;
-
-    // Validación básica
     if (!name.trim() || !email.trim() || !message.trim()) {
         alert('Por favor, completa todos los campos.');
         return;
     }
 
-    // Crear mensaje de confirmación
+
     let confirmation = document.createElement('p');
     confirmation.textContent = `Gracias ${name}, hemos recibido tu mensaje: "${message}". Responderemos a tu correo: ${email}.`;
     confirmation.style.color = 'green';
 
     form.parentElement.appendChild(confirmation);
 
-    // Limpiar formulario
     form.reset();
 
-    // Eliminar mensaje tras 5 segundos
+
     setTimeout(() => {
         confirmation.remove();
     }, 5000);
 });
 
-// Agregar campo dinámico al formulario (opcional)
+
 let addFieldButton = document.createElement('button');
 addFieldButton.textContent = 'Agregar campo extra';
 addFieldButton.type = 'button';
