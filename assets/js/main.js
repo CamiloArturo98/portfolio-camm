@@ -29,13 +29,16 @@ for (let i = 0; i < main.length; i++) {
 }
 
 let burguerBtn = document.querySelector('.menu-toggle'),
-listNav = document.querySelector('#nav-list ');
+listNav = document.querySelector('#nav-list');
 burguerBtn.addEventListener('click', (event) => {
 listNav.style.display = listNav.style.display === 'flex' ? 'none' : 'flex';
 event.preventDefault();
     window.addEventListener('resize', (event) => {
     if (window.innerWidth > 768) {
         listNav.style.display = 'flex';
+        event.preventDefault();
+    } else {
+        listNav.style.display = 'none'
         event.preventDefault();
     }
 });
@@ -51,7 +54,7 @@ for (let i = 0; i < a.length; i++) {
         let href = event.target.getAttribute('href');
         let element = document.querySelector(href);
         if (window.innerWidth <= 768) {
-            // TODO: Continue here.
+            listNav.style.display = 'none'
         }
     });
 }
