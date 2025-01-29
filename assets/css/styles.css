@@ -13,7 +13,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 10px 0px #1c1c1c;
 }
 
 header nav {
@@ -55,7 +55,8 @@ header nav ul li a:hover {
     cursor: pointer;
     user-select: none;
     position: absolute;  /* Esto coloca el botón fuera del flujo normal del layout */
-    left: 20px;  /* Asegura que el botón esté al lado izquierdo */
+    left: 2px;  /* Asegura que el botón esté al lado izquierdo */
+    margin-top: 70px;
 }
 
 .menu-toggle.active + ul {
@@ -77,12 +78,11 @@ header nav ul li a:hover {
         position: absolute;
         top: 60px;
         left: 0;
-        width: 100%;
-        padding: 10px 0;
+        padding: 5px 70px;
         border-top: 1px solid #555;
         overflow: hidden;
+        border-radius: 10px;
     }
-
     header nav ul li {
         margin: 10px 0;
         width: 100%;

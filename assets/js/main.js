@@ -1,7 +1,11 @@
 let navBar = document.querySelector('#nav');
 navBar.addEventListener('mouseover', () => {
+    if(window.innerWidth > 768){
     navBar.style.transform = 'scale(1.1)';
     navBar.style.transition = 'transform 0.3s ease';
+} else {
+    navBar.style.transform = 'scale(1)';
+}
 });
 
 navBar.addEventListener('mouseout', () => {
@@ -25,12 +29,20 @@ for (let i = 0; i < main.length; i++) {
 }
 
 let burguerBtn = document.querySelector('.menu-toggle'),
-    listNav = document.querySelector('#nav-list');
-
+listNav = document.querySelector('#nav-list ');
 burguerBtn.addEventListener('click', (event) => {
-    listNav.style.display = listNav.style.display === 'flex' ? 'none' : 'flex';
-    event.preventDefault();
+listNav.style.display = listNav.style.display === 'flex' ? 'none' : 'flex';
+event.preventDefault();
+    window.addEventListener('resize', (event) => {
+    if (window.innerWidth > 768) {
+        listNav.style.display = 'flex';
+        event.preventDefault();
+    }
 });
+
+});
+
+
 
 let a = document.querySelectorAll('a');
 
@@ -38,18 +50,12 @@ for (let i = 0; i < a.length; i++) {
     a[i].addEventListener('click', (event) => {
         let href = event.target.getAttribute('href');
         let element = document.querySelector(href);
-
         if (window.innerWidth <= 768) {
-            listNav.style.display = 'none';
+            // TODO: Continue here.
         }
     });
 }
 
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-        listNav.style.display = 'flex';
-    }
-});
 
 
 let form = document.querySelector('#form');
